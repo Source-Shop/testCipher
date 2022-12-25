@@ -67,7 +67,7 @@ public class Program
 
         Console.WriteLine(readAllText);
 
-        var readBytes = Encoding.ASCII.GetBytes(readAllText);
+        var readBytes = Encoding.UTF32.GetBytes(readAllText);
 
         
 
@@ -91,7 +91,7 @@ public class Program
         }
 
 
-        var readText = Encoding.ASCII.GetString(readByteDB);
+        var readText = Encoding.UTF32.GetString(readByteDB);
 
         Console.WriteLine(readText);
        
