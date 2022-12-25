@@ -2,12 +2,13 @@
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Transactions;
 
 // TestRoot myDeserializedClass = JsonConvert.DeserializeObject<TestRoot>(myJsonResponse);
     public class TestRoot
     {
-        public string? UniqueID { get; set; }
-        public string? Name { get; set; }
+        public string? UniqueID { get; set; } = "None";
+        public string? Name { get; set; } = "None";
 
         public string? ImageSourceBasePath { get; set; }
 
@@ -96,7 +97,11 @@ public class Program
        
         TestRoot? classObj = JsonSerializer.Deserialize<TestRoot>(readText);
 
+        if (classObj is null) return;
+       
         Console.WriteLine(classObj.Name);
+        
+       
    
     }
 }
